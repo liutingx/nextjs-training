@@ -41,4 +41,12 @@ const IndexPage = () => {
   );
 };
 
+export const getServerSideProps = () => {
+  return {
+    props: {
+      some: "data",
+    },
+  };
+};
+
 export default IndexPage;
