@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, waitFor, screen } from "@testing-library/react";
 import IndexPage, { getServerSideProps } from "../../pages";
 
 const MOCKED_USER_DATA = [
