@@ -21,3 +21,10 @@ Run `npm run dev`
 
 - When an event is triggered, the loading spinner should be visible
 - when user inputs a unit number, the dash will automatically be inserted
+
+## What is CI/CD?
+
+> Continuous Integration (CI) & Continuous Delivery (CD)
+
+- Create a push / Your PR is accepted and merged
+- PR is merged, a pipeline is run
