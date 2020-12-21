@@ -20,23 +20,27 @@ const IndexPage = () => {
     fetch("http://localhost:3000/api/get-users")
       .then((response) => response.json())
       .then((usersDetails) => {
-        console.log("usersDetails", usersDetails);
         setUsers(usersDetails);
-      });
+      })
+      .catch(() => {});
   }, []);
 
   return (
     <div>
       User Profiles
       <br />
-      {users.map((user) => (
-        <ul key={user.id}>
-          <li>Name: {user.name} </li>
-          <li>Username: {user.username} </li>
-          <li>Email: {user.email} </li>
-          <li>Address: {user.address.city} </li>
-        </ul>
-      ))}
+      <div data-testid="profiles-list">
+        {users.map((user) => (
+          <ul key={user.id}>
+            <li>Name: {user.name} </li>
+            <li data-testid={`username-${user.id}`}>
+              Username: {user.username}&nbsp;
+            </li>
+            <li>Email: {user.email} </li>
+            <li>Address: {user.address.city} </li>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };
